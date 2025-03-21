@@ -15,11 +15,7 @@ with open("style.css") as f:
 
 
 # chargement des données
-
-path = os.getcwd()
-chemin_dossier = os.path.abspath(os.path.join(path, '../Données'))
-chemin_donnee = os.path.join(chemin_dossier, 'customers.csv')
-df = pd.read_csv(chemin_donnee)
+df = pd.read_csv("customers.csv")
 
 # Sidebar
 st.sidebar.header("veuillez filtrer")
