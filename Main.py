@@ -56,3 +56,38 @@ def metrics():
     
     style_metric_cards(background_color="#121270", border_left_color="#FFD700", text_color="#f20045", box_shadow="3px")
     
+    
+# ceer les div pour les graphiques
+
+div1, div2 = st.columns(2) 
+# 📊 pie chart 
+def pie_chart():
+    with div1: 
+        theme_plotly = None  
+        fig = px.pie(df_selection, values='AnnualSalary', names='Department', title='Répartition des salaires par département')
+        fig.update_layout(legende_title ='Country', legend_y=0.9)
+        fig.update_traces(textinfo ='percent+label', textposition= 'inside')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+        
+# 📊 bar chart (Barres )
+def bar_chart():
+    theme_plotly = None 
+    with div2:
+        theme_plotly = None
+        fig = px.bar(df_selection, x='Department', y='AnnualSalary', text_auto= '.2s', title=' ')
+        fig.update_traces(textfont_size= 16, textangle=0, textposition='outside', cliponaxis=False)
+        st.plotly_chart(fig, use_container_width=True, theme="streamlit")
+        
+# 📊 scatter plot (Nuage de points)
+
+
+#mysql table 
+def mysql_table():
+    with st.expander("Tabular"):
+        #st.dataframe(df_selection)
+        shwdata = st.multiselect('Filtrer:', df.columns, default= ['EEID', 'FullName', 'JobTitle', 'Department', 'BusinessUnit', 'Gender','Ethnicity', 'Age', 'HireDate', 'AnnualSalary', 'Bonus', 'Country', 'City', 'id']) 
+        st.dataframe(df_selection[shwdata], use_container_width=True)
+
+
+# option menu         
+        
