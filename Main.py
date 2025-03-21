@@ -21,24 +21,24 @@ df = pd.read_csv("customers.csv")
 st.sidebar.header("veuillez filtrer")
 departement = st.sidebar.multiselect(
     "Filtrer Departement",
-    options= df["Departement"].unique(),
-    default= df["Departement"].unique(),
+    options= df['Department'].unique(),
+    default= df['Department'].unique(),
 )
 
 pays = st.sidebar.multiselect(
     "Filtrer Country",
-    options= df["Country"].unique(),
-    default= df["Country"].unique(),
+    options= df['Country'].unique(),
+    default= df['Country'].unique(),
 )
 
 businessunit = st.sidebar.multiselect(
     "Filtrer Business Unit",
-    options= df["BusinessUnit"].unique(),
-    default= df["BusinessUnit"].unique(),
+    options= df['BusinessUnit'].unique(),
+    default= df['BusinessUnit'].unique(),
 )
 
 df_selection = df.query(
-    "Departement == @departement & Country == @country & BusinessUnit == @businessunit"
+    "Department == @department & Country == @country & BusinessUnit == @businessunit"
     )
 
 
