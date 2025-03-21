@@ -37,9 +37,12 @@ businessunit = st.sidebar.multiselect(
     default= df['BusinessUnit'].unique(),
 )
 
-df_selection = df.query(
-    "Department == @department & Country == @country & BusinessUnit == @businessunit"
-    )
+df_selection = df[
+    (df["Department"] == department) &
+    (df["Country"] == country) &
+    (df["BusinessUnit"] == businessunit)
+]
+
 
 
 # Meilleurs analyses 
