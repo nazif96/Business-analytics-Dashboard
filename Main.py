@@ -82,7 +82,7 @@ def bar_chart():
 
 
 #mysql table 
-def mysql_table():
+def table():
     with st.expander("Tabular"):
         #st.dataframe(df_selection)
         shwdata = st.multiselect('Filtrer:', df.columns, default= ['EEID', 'FullName', 'JobTitle', 'Department', 'BusinessUnit', 'Gender','Ethnicity', 'Age', 'HireDate', 'AnnualSalary', 'Bonus', 'Country', 'City', 'id']) 
@@ -90,4 +90,26 @@ def mysql_table():
 
 
 # option menu         
+from streamlit_option_menu import option_menu
+with st.sidebar:
+    selected= option_menu(
+        menu_title= "Main Menu",
+        options= ["Home", "Table"],
+        icons= ["Home", "book"],
+        menu_icon= "cast", # option
+        default_index= 0, 
+        orientation= "vertical",
+    
         
+    )
+
+
+if selected == "Home":
+    pie_chart()
+    bar_chart()
+    metrics()
+    
+if selected == "Table":
+    metrics()
+    table()
+    st.dataframe(df_selection.describe().T, use_container_width=True)  
