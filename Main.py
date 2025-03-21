@@ -15,4 +15,4 @@ with open("style.css") as f:
 
 # chargement des données
 df = pd.read_csv("Données/customers.csv")  # chargement des données
-df.head()
+print(df) 
