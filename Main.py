@@ -14,7 +14,5 @@ with open("style.css") as f:
 
 
 # chargement des données
-@st.cache
 df = pd.read_csv("Données/customers.csv")  # chargement des données
-
 df.head()
