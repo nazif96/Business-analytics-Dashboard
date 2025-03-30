@@ -26,7 +26,7 @@ Les utilisateurs peuvent filtrer les données à l’aide de filtres latéraux (
 
 💡 Interface utilisateur épurée avec un style personnalisé
 
-## Structure du projet 
+## 🏗️ Structure du projet 
 
 ```
 Business-analytics-Dashboard
@@ -42,7 +42,7 @@ Business-analytics-Dashboard
 
 ## ▶️ Lancer l'application
 
-    **Prérequis** 
+    Prérequis 
 
  Assurez-vous d’avoir Python et Streamlit installés. Puis :
 
