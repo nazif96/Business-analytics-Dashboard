@@ -42,8 +42,6 @@ Business-analytics-Dashboard
 
 ## ▶️ Lancer l'application
 
-    Prérequis 
-
  Assurez-vous d’avoir Python et Streamlit installés. Puis :
 
  - Installez les dépendances 
