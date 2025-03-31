@@ -113,7 +113,25 @@ if selected == "Home":
     bar_chart()
     metrics()
     
+    ...
+    st.markdown("---")
+    st.markdown("**👤 Auteur :** Nazifou AFOLABI")
+    st.markdown("Profil : [LinkedIn](https://www.linkedin.com/in/nazifou-afolabi-10544729b/)")
+    st.markdown("📧 Pour toute remarque ou suggestion : [me contacter](mailto:nazif@exemple.com)")
+
+
+
 if selected == "Table":
     metrics()
     table()
     st.dataframe(df_selection.describe().T, use_container_width=True)  
+    
+    
+    
+# Footer
+st.markdown("---")
+st.markdown("Business Analytics Dashboard @2025")
+    
+    
+    
+    
